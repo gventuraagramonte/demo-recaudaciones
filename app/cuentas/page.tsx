@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from "react"
+import { API_BASE } from '@/lib/env'
 
 type Cliente = {
     id: string
@@ -33,13 +34,13 @@ export default function CuentasPage() {
     }, [])
 
     const fetchClientes = async () => {
-        const res = await fetch('http://localhost:3000/cliente')
+        const res = await fetch(`${API_BASE}/cliente`)
         const data = await res.json()
         setClientes(data)
     }
 
     const fetchCuentas = async () => {
-        const res = await fetch('http://localhost:3000/cuenta')
+        const res = await fetch(`${API_BASE}/cuenta`)
         const data = await res.json()
         setCuentas(data)
     }
@@ -51,7 +52,7 @@ export default function CuentasPage() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         try {
-            const res = await fetch('http://localhost:3000/cuenta', {
+            const res = await fetch(`${API_BASE}/cuenta`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ ...form, saldo: parseFloat(form.saldo) }),

@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from "react"
+import { API_BASE } from '@/lib/env'
 
 type Cliente = {
     id: string,
@@ -28,7 +29,7 @@ export default function ClientesPage() {
 
     const obtenerClientes = async () => {
         try {
-            const res = await fetch("http://localhost:3000/cliente")
+            const res = await fetch(`${API_BASE}/cliente`)
             const data = await res.json()
             setClientes(data)
         } catch (error) {
@@ -46,7 +47,7 @@ export default function ClientesPage() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         try {
-            const res = await fetch("http://localhost:3000/cliente", {
+            const res = await fetch(`${API_BASE}/cliente`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

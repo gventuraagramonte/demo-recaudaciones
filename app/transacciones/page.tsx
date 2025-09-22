@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from "react"
+import { API_BASE } from '@/lib/env'
 
 interface Empresa {
     id: string
@@ -34,12 +35,12 @@ export default function TransaccionesPage() {
     const [mensaje, setMensaje] = useState<string>('')
 
     useEffect(() => {
-        fetch('http://localhost:3000/empresa')
+        fetch(`${API_BASE}/empresa`)
             .then(res => res.json())
             .then(setEmpresas)
             .catch(err => console.error('Error al cargar empresas:', err));
 
-        fetch('http://localhost:3000/cuenta')
+        fetch(`${API_BASE}/cuenta`)
             .then(res => res.json())
             .then(setCuentas)
             .catch(err => console.error('Error al cargar cuentas:', err));
@@ -47,7 +48,7 @@ export default function TransaccionesPage() {
     }, [])
 
     const cargarTransacciones = () => {
-        fetch('http://localhost:3000/transaccion')
+        fetch(`${API_BASE}/transaccion`)
             .then(res => res.json())
             .then(setTransacciones)
             .catch(err => console.error('Error al cargar transacciones:', err))
@@ -63,7 +64,7 @@ export default function TransaccionesPage() {
         };
 
         try {
-            const res = await fetch('http://localhost:3000/transaccion', {
+            const res = await fetch(`${API_BASE}/transaccion`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(transaccion),

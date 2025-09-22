@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from "react"
+import { API_BASE } from '@/lib/env'
 
 type Empresa = {
     id: string
@@ -19,7 +20,7 @@ export default function EmpresasPage() {
 
     const obtenerEmpresas = async () => {
         try {
-            const res = await fetch('http://localhost:3000/empresa')
+            const res = await fetch(`${API_BASE}/empresa`)
             const data = await res.json()
             setEmpresas(data)
         } catch (error) {
@@ -34,7 +35,7 @@ export default function EmpresasPage() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         try {
-            const res = await fetch('http://localhost:3000/empresa', {
+            const res = await fetch(`${API_BASE}/empresa`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(form),
