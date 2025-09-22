@@ -1,0 +1,13 @@
+apiVersion:
+kind: Service
+metadata:
+  name: node-recaudaciones
+  namespace: recaudaciones
+spec:
+  selector:
+    app: node-recaudaciones
+  port:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: ClusterIP
