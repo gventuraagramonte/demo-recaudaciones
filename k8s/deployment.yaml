@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: recaudaciones-demo
-          image: gio0603/reca-web:f353c41
+          image: gio0603/reca-web:746f0b9
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
