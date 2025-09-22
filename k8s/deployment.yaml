@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: recaudaciones-demo
-          image: gio0603/reca-web:746f0b9
+          image: gio0603/reca-web:293413d
           env:
             - name: API_BASE
               value: "http://localhost:3001"
