@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: recaudaciones-demo
-  namespace: demo
+  namespace: recaudaciones
 spec:
   replicas: 3
   selector:
