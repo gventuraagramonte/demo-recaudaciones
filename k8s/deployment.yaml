@@ -10,7 +10,7 @@ spec:
       app: recaudaciones-demo
   strategy:
     type: RollingUpdate
-    RollingUpdate:
+    rollingUpdate:
       maxSurge: 1
       maxUnavailable: 0
   template:
