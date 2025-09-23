@@ -22,7 +22,7 @@ spec:
         - name: recaudaciones-demo
           image: gio0603/reca-web:b096ebe
           env:
-            - name: API_BASE
+            - name: NEXT_PUBLIC_API_URL
               value: "https://api.recaudaciones.local"
           imagePullPolicy: IfNotPresent
           ports:
