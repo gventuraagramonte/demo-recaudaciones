@@ -30,6 +30,7 @@ export default function ClientesPage() {
     const obtenerClientes = async () => {
         try {
             const res = await fetch(`${API_BASE}/cliente`)
+            console.log("Esta es la api", API_BASE)
             const data = await res.json()
             setClientes(data)
         } catch (error) {
