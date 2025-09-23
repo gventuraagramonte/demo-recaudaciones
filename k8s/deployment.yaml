@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: recaudaciones-demo
-          image: gio0603/reca-web:6d5c28a
+          image: gio0603/reca-web:112e009
           env:
             - name: NEXT_PUBLIC_API_URL
               value: "https://api.recaudaciones.local"
