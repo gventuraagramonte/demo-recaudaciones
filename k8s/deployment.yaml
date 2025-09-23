@@ -23,7 +23,7 @@ spec:
           image: gio0603/reca-web:252b04e
           env:
             - name: API_BASE
-              value: "http://localhost:3001"
+              value: "https://api.recaudaciones.local"
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
