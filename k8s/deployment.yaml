@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: recaudaciones-demo
-          image: gio0603/reca-web:252b04e
+          image: gio0603/reca-web:b096ebe
           env:
             - name: API_BASE
               value: "https://api.recaudaciones.local"
